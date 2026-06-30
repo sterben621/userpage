@@ -1,0 +1,251 @@
+body{
+    background: linear-gradient(135deg,#fff7ef,#ffe4c4);
+    font-family:"Microsoft JhengHei",sans-serif;
+}
+
+/* 主標題 */
+
+.display-4{
+    max-width:1200px;
+    margin:auto;
+    border-radius:18px;
+    padding:15px 0 !important;
+}
+
+/* 白色卡片 */
+
+.col-md-6{
+    max-width:650px;
+    width:100%;
+    margin:auto;
+
+    background:#fff;
+    border-radius:25px;
+    padding:35px 40px;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+.container{
+    max-width:1200px;
+}
+
+.row{
+    justify-content:center;
+}
+
+/* label */
+
+.form-label,
+.form-check-label{
+    font-weight:700;
+    color:#5d4037;
+}
+
+/* 輸入框 */
+
+.form-control,
+.form-select{
+    height:55px;
+    border-radius:15px;
+    border:2px solid #f3c58d;
+}
+.form-floating>.form-control{
+    height:55px;
+    padding-top:18px;
+}
+/* focus */
+
+.form-control:focus,
+.form-select:focus{
+    border-color:#ff9800;
+    box-shadow:0 0 15px rgba(255,152,0,.3);
+}
+
+/* 下拉 */
+
+option{
+    font-size:18px;
+}
+
+/* checkbox radio */
+
+.form-check{
+    padding:8px 0;
+}
+
+.form-check-input:checked{
+    background:#ff9800;
+    border-color:#ff9800;
+}
+
+/* topping */
+
+#topping_group{
+    border:2px solid #ffe0b2;
+    border-radius:15px;
+    padding:15px;
+    background:#fffaf5;
+}
+
+/* supply */
+
+#supply_group{
+    border:2px solid #ffe0b2;
+    border-radius:15px;
+    padding:15px;
+    background:#fffaf5;
+}
+
+/* 狀態switch */
+
+#pstatus_text{
+    color:#ff5722;
+    font-weight:bold;
+    font-size:18px;
+}
+
+/* 按鈕 */
+
+.btn{
+    border-radius:50px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#9e9e9e;
+    border:none;
+}
+
+.btn-primary:hover{
+    background:#757575;
+    transform:translateY(-2px);
+}
+
+.btn-secondary{
+    background:#ff9800;
+    border:none;
+}
+
+.btn-secondary:hover{
+    background:#fb8c00;
+    transform:translateY(-2px);
+}
+
+.btn-warning{
+    background:#43a047;
+    color:#fff;
+    border:none;
+}
+
+.btn-warning:hover{
+    background:#2e7d32;
+}
+
+/* 第二頁確認 */
+
+#s02{
+    background:#fff;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    padding:25px;
+}
+
+/* 第二頁標題 */
+
+.display-5{
+    background:linear-gradient(90deg,#4caf50,#8bc34a);
+    color:white;
+}
+
+/* 顯示資料 */
+
+#showmessange{
+    background:#fffdf7;
+    border-left:8px solid #ff9800;
+    padding:20px;
+    border-radius:15px;
+    line-height:2;
+    font-size:18px;
+}
+#supply_group{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+
+    padding:18px;
+    border-radius:15px;
+    border:2px solid #f3c58d;
+}
+#topping_group{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+
+    padding:20px;
+    border-radius:15px;
+    border:2px solid #f3c58d;
+    background:#fffaf5;
+}
+/* feedback */
+
+.valid-feedback{
+    font-weight:bold;
+    color:#43a047;
+}
+
+.invalid-feedback{
+    font-weight:bold;
+    color:#e53935;
+}
+.text-end{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:35px !important;
+}
+
+.text-end .btn{
+    width:140px;
+    height:48px;
+}
+
+/* switch */
+.form-switch{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+.form-switch .form-check-input{
+    width:55px;
+    height:28px;
+    margin-left:0;
+}
+
+
+/* hover */
+
+.form-control:hover,
+.form-select:hover{
+    border-color:#ffb74d;
+}
+
+/* 手機 */
+
+@media(max-width:768px){
+
+    .display-4{
+        font-size:2rem;
+        letter-spacing:3px;
+    }
+
+    .col-md-6{
+        padding:20px;
+        border-radius:18px;
+    }
+
+    .btn{
+        width:100%;
+        margin-top:10px;
+    }
+
+}
