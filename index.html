@@ -3,115 +3,201 @@
 <head>  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>個人首頁</title>
+    <title>王仁宏的個人首頁</title>
+    <!-- 引入 Google 字體，讓英文與數字質感提升 -->
+    <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="css1/all.min.css">
     <link rel="stylesheet" href="css首頁/css2.css">
     <style>
-     
-        body{
-            background-color: var(--accent);
+        /* 全域初始化與字體優化 */
+        * {
+            box-sizing: border-box;
+            font-family: 'Noto Sans TC', sans-serif;
         }
-        .s01{
-            background-color: var(--secondary);
-            height: 100vh;
+        body {
+            background-color: var(--accent, #1a1a1a);
+            margin: 0;
+            color: #ffffff;
+            overflow-x: hidden;
         }
-        .s01 .box01{
-            width: 200px;
-            height: 200px;
-            background-color: var(--text-light);
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-        .s01 .box02{
-            width: 200px;
-            height: 200px;
-            background-color: var(--bg-dark);
-            position: absolute;
-            top: 0;
-            right: 0;
 
+        /* 第一區塊：科技感極簡首頁 */
+        .s01 {
+            background: linear-gradient(135deg, #1e1e2f 0%, #111119 100%);
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
         }
-        .s01 .box03{
-             width: 200px;
-            height: 200px;
-            background-color: var(--bg-dark);
+
+        /* 裝飾方塊：改用輕量透明感，看起來更現代 */
+        .s01 .box01, .s01 .box02, .s01 .box03, .s01 .box04 {
+            width: 180px;
+            height: 180px;
             position: absolute;
-            bottom: 0;
-            left: 0;
+            opacity: 0.15;
+            border: 2px solid #ffffff;
+            transition: all 0.5s ease;
         }
-            
-        .s01 .box04{
-             width: 200px;
-            height: 200px;
-            background-color: var(--bg-dark);
+        .s01 .box01 { top: 30px; left: 30px; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+        .s01 .box02 { top: 30px; right: 30px; border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%; }
+        .s01 .box03 { bottom: 30px; left: 30px; border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        .s01 .box04 { bottom: 30px; right: 30px; border-radius: 40% 60% 70% 30% / 40% 40% 60% 60%; }
+
+        /* 主視覺：鋼彈背景圖加入遮罩與微光效果 */
+        .s01 .userimg {
             position: absolute;
-            bottom: 0;
-            right: 0;
-        }
-        .s01 .userimg{
-            position: absolute;
-            top: 100px;
-            left: 100px;
-            bottom: 100px;
-            right: 100px;
-            background-color: var(--accent);
-            background-image: url(images1/gundam.avif);
+            top: 60px;
+            left: 60px;
+            bottom: 60px;
+            right: 60px;
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url(images1/gundam.avif);
             background-size: cover;
             background-position: center center;
-            border-radius: 15px;
-            box-shadow: 2px 2px 2px 2px var(--text-light);
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .usertext{
+
+        /* 個人簡介：超美毛玻璃特效 */
+        .usertext {
             position: absolute;
             top: 50%;
-            left: 30%;
-            right: 30%;
-            bottom: 30%;
-            color: var(--secondary);
-        }
-        /* s02作品區  */
-        .s02{
-            padding: 80px 10%;
-            background-color: #456879;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 85%;
+            max-width: 550px;
+            color: #ffffff;
             text-align: center;
+            z-index: 10;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
         }
-         .s02 h2{
-            font-size: 30px;
+        .usertext h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            background: linear-gradient(45deg, #00f2fe, #4facfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .s02 .card{
+        .usertext hr {
+            width: 60px;
+            border: 0;
+            height: 3px;
+            background: linear-gradient(45deg, #00f2fe, #4facfe);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+        .usertext h2 {
+            font-size: 1.2rem;
+            color: #a0aec0;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+        .usertext p {
+            line-height: 1.8;
+            color: #e2e8f0;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* 第二區塊：現代感作品集 */
+        .s02 {
+            padding: 100px 5%;
+            background-color: #0f111a;
+            text-align: center;
+            position: relative;
+        }
+        .s02 h2 {
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-bottom: 50px;
+            position: relative;
             display: inline-block;
-            margin: 15px;
-            width: 240px;
-            background-color: #1256;
-            padding: 20px;
-            text-align: left;
-            border-radius: 12px;
-
         }
-            
-       
-        .s02 .card h3{
-            color:var(--accent);
-            margin-top: 0;
-            
-        }
-        .s02 .card p{
-            line-height: 2;
-            color:chartreuse
-        }
-        .s02 .card2{
-            width: 200px;
-            height: 200px;
-            background-color: var(--bg-dark);
+        /* 標題下方小裝飾線 */
+        .s02 h2::after {
+            content: '';
             position: absolute;
-            top: 0;
-            right: 0;
-          }
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 3px;
+            background: #00f2fe;
+            border-radius: 2px;
+        }
 
+        /* 作品卡片容器 */
+        .card-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        /* 作品卡片美化 */
+        .s02 .card {
+            background: #161925;
+            width: 280px;
+            padding: 30px 25px;
+            text-align: left;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        /* 卡片懸浮效果：往上飄並發光 */
+        .s02 .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0, 242, 254, 0.15);
+            border-color: rgba(0, 242, 254, 0.3);
+        }
+        .s02 .card h3 {
+            color: #ffffff;
+            margin-top: 0;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+        .s02 .card p {
+            line-height: 1.6;
+            color: #00f2fe; /* 亮眼科技藍取代原本的螢光綠 */
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        /* 萬能按鈕美化 */
+        .s02 .card a {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(45deg, #00f2fe, #4facfe);
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+        }
+        .s02 .card a:hover {
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            box-shadow: 0 6px 20px rgba(0, 242, 254, 0.5);
+            transform: scale(1.02);
+        }
     </style>
 </head>
 <body>
+    <!-- 第一區塊 -->
     <section class="s01">
         <div class="box01"></div>
         <div class="box02"></div>
@@ -121,33 +207,41 @@
         <div class="usertext">
             <h1>王仁宏履歷</h1>
             <hr>
-            <h2>應徵職位</h2>
-            <p>以來激烈線路規則中港路見到怎麼辦，追求避免友情方面上漲根本如果所有人大文件大小家人未來因素定位，有。</p>
-
-            
+            <h2>應徵職位：前端工程師</h2>
+            <p>熱衷於網頁切版與前端互動技術，具備良好的美感與程式邏輯。致力於打造流暢的使用者體驗，持續精進現代化網頁框架與響應式設計。</p>
         </div>
     </section>
-    <section class="so2">
+
+    <!-- 第二區塊 -->
+    <section class="s02">
         <h2>我的作品</h2>
 
-        <!-- 作品01 -->
-         <div class="card">
-            <h3>切版練習</h3>
-            <p>html網站</p>
-            <a href="20260526-1.html" target="_blank">查看作品</a>
-         </div>
-          <!-- 作品02 -->
-         <div class="card2">
-            <h3>表格</h3>
-            <p>erp商品表格</p>
-            <a href="20260605ch5.html" target="_blank">查看作品</a>
-         </div>
-          <!-- 作品03 -->
-         <div class="card3">
-            <h3>文字圖片</h3>
-            <p>html文字圖片筆記</p>
-            <a href="20260605ch3.html" target="_blank">查看作品</a>
-         </div>
+        <!-- 封裝容器讓多張卡片能完美並排置中 -->
+        <div class="card-container">
+            <!-- 作品01 -->
+            <div class="card">
+                <h3>切版練習</h3>
+                <p>HTML5 / CSS3 網站</p>
+                <a href="20260526-1.html" target="_blank">查看作品</a>
+            </div>
+            <!-- 作品02 -->
+            <div class="card">
+                <h3>表格設計</h3>
+                <p>ERP 商品管理表格</p>
+                <a href="20260605ch5.html" target="_blank">查看作品</a>
+            </div>
+            <!-- 作品03 -->
+            <div class="card">
+                <h3>圖文筆記</h3>
+                <p>HTML 文字圖片整合</p>
+                <a href="20260605ch3.html" target="_blank">查看作品</a>
+            </div>
+            <div class="card">
+                <h3>ch11飲料</h3>
+                <p>HTML選單</p>
+                <a href="2026062502-ch11.html" target="_blank">查看作品</a>
+            </div>
+        </div>
     </section>
 </body>
 </html>
