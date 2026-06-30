@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch.5 表格table</title>
+    <link rel="stylesheet" href="css1/all.min.css">
+    <link rel="stylesheet" href="css首頁/bootstrap.min.css">
+    <link rel="stylesheet" href="css1/css1.css">
+    <style>
+        @media screen and (max-width: 768px) {
+
+            .table-rwd thead,
+            caption {
+                display: none
+            }
+
+            .table-rwd tbody tr {
+                display: block;
+                margin: 15px;
+                border: 2px solid var(--button-primary);
+                border-radius: 5px;
+            }
+
+            .table-rwd tbody tr td {
+                display: block;
+                /* 避免跑版 溢位 */
+                overflow: hidden;
+            }
+
+            /* 偽元素 attr()抓出隱藏元素 */
+            .table-rwd tbody tr td::before {
+                content: attr(data-th)" : ";
+                font-size: 25px;
+                font-weight: bold;
+                color: var(--color-success);
+                display: block;
+                float: left;
+                width: 30%;
+                text-align: right;
+                padding-right: 1rem;
+
+            }
+
+            .table-rwd tbody tr td span {
+                display: block;
+                float: left;
+                width: 70%;
+            }
+
+            .female-product {
+                border-left: 6px solid #e83e8c;
+            }
+
+            .male-product {
+                border-left: 6px solid #0d6efd;
+            }
+
+            tbody tr:hover {
+                cursor: pointer;
+                transform: scale(1.01);
+                transition: 0.2s;
+            }
+
+            .table td {
+                vertical-align: middle;
+            }
+
+            .display-3 {
+                color: #343a40;
+                font-weight: 900;
+                letter-spacing: 3px;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="display-3 text-center fw-900">產品列表</div>
+        <table class="table mt-3 table-bordered table-hover table-striped table-rwd">
+            <caption>表1.2 產品列表</caption>
+            <thead class="table-dark">
+                <tr>
+                    <th>產品編號</th>
+                    <th>產品名稱</th>
+                    <th>產品價格</th>
+                    <th>產品數量</th>
+                    <th>產品備註</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-primary">
+                    <!-- data-th 隱藏 span不換行 -->
+                    <td data-th="產品編號"><span>001</span></td>
+                    <td data-th="產品名稱"><span>綠茶</span></td>
+                    <td data-th="產品價格"><span>30</span></td>
+                    <td data-th="產品數量"><span>10</span></td>
+                    <td data-th="產品備註">
+                        <span>可以說，明白綠色一定整個讓我複製崇拜適合經歷筆記本，成立空調一條競爭知名藥品按照轎車妻子國務院未知根本看出，來源豐富你怎麼，不管傷心每日陽光空中這個問題大會新浪日月潭對話，複製熱情那些，智慧青年，之。</span>
+                    </td>
+                </tr>
+                <tr class="bg-primary">
+                    <td>002</td>
+                    <td>紅茶</td>
+                    <td>30</td>
+                    <td>10</td>
+                    <td>備註</td>
+                </tr>
+                <tr class="table-primary male-product">
+                    <td data-th="產品編號"><span>P001</span></td>
+                    <td data-th="產品名稱"><span>男士商務襯衫</span></td>
+                    <td data-th="產品價格"><span>980</span></td>
+                    <td data-th="產品數量"><span>35</span></td>
+                    <td data-th="產品備註"><span>熱銷商品，庫存充足</span></td>
+                </tr>
+
+                <tr class="table-success female-product">
+                    <td data-th="產品編號"><span>P002</span></td>
+                    <td data-th="產品名稱"><span>女士雪紡上衣</span></td>
+                    <td data-th="產品價格"><span>880</span></td>
+                    <td data-th="產品數量"><span>28</span></td>
+                    <td data-th="產品備註"><span>春夏新品</span></td>
+                </tr>
+
+                <tr class="table-warning male-product">
+                    <td data-th="產品編號"><span>P003</span></td>
+                    <td data-th="產品名稱"><span>男士牛仔褲</span></td>
+                    <td data-th="產品價格"><span>1280</span></td>
+                    <td data-th="產品數量"><span>8</span></td>
+                    <td data-th="產品備註"><span>低庫存預警</span></td>
+                </tr>
+                <tr class="table-info female-product">
+                    <td data-th="產品編號"><span>P004</span></td>
+                    <td data-th="產品名稱"><span>女士長裙</span></td>
+                    <td data-th="產品價格"><span>1580</span></td>
+                    <td data-th="產品數量"><span>18</span></td>
+                    <td data-th="產品備註"><span>人氣商品</span></td>
+                </tr>
+
+                <tr class="table-secondary male-product">
+                    <td data-th="產品編號"><span>P005</span></td>
+                    <td data-th="產品名稱"><span>男士運動外套</span></td>
+                    <td data-th="產品價格"><span>1680</span></td>
+                    <td data-th="產品數量"><span>22</span></td>
+                    <td data-th="產品備註"><span>秋冬款式</span></td>
+                </tr>
+
+                <tr class="table-danger female-product">
+                    <td data-th="產品編號"><span>P006</span></td>
+                    <td data-th="產品名稱"><span>女士針織毛衣</span></td>
+                    <td data-th="產品價格"><span>1380</span></td>
+                    <td data-th="產品數量"><span>5</span></td>
+                    <td data-th="產品備註"><span>即將售完</span></td>
+                </tr>
+
+                <tr class="table-primary male-product">
+                    <td data-th="產品編號"><span>P007</span></td>
+                    <td data-th="產品名稱"><span>男士皮鞋</span></td>
+                    <td data-th="產品價格"><span>2280</span></td>
+                    <td data-th="產品數量"><span>15</span></td>
+                    <td data-th="產品備註"><span>商務系列</span></td>
+                </tr>
+
+                <tr class="table-success female-product">
+                    <td data-th="產品編號"><span>P008</span></td>
+                    <td data-th="產品名稱"><span>女士高跟鞋</span></td>
+                    <td data-th="產品價格"><span>1980</span></td>
+                    <td data-th="產品數量"><span>20</span></td>
+                    <td data-th="產品備註"><span>新品上市</span></td>
+                </tr>
+
+                <tr class="table-warning male-product">
+                    <td data-th="產品編號"><span>P009</span></td>
+                    <td data-th="產品名稱"><span>男士休閒T恤</span></td>
+                    <td data-th="產品價格"><span>680</span></td>
+                    <td data-th="產品數量"><span>12</span></td>
+                    <td data-th="產品備註"><span>促銷商品</span></td>
+                </tr>
+
+                <tr class="table-info female-product">
+                    <td data-th="產品編號"><span>P010</span></td>
+                    <td data-th="產品名稱"><span>女士手提包</span></td>
+                    <td data-th="產品價格"><span>2680</span></td>
+                    <td data-th="產品數量"><span>16</span></td>
+                    <td data-th="產品備註"><span>高單價商品</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="jss/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
